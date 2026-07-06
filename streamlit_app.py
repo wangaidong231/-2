@@ -65,7 +65,7 @@ def image_to_perler(img, grid_size, palette, scale=30, bg_color=(240,240,240)):
         resample_filter = Image.LANCZOS
     img_resized = img.resize((new_w, new_h), resample_filter)
 
-    canvas = Image.new('RGB', (grid_size, grid_size), bg_color)
+    canvas = Image.new('RGB', (grid_size, grid_size), (255, 255, 255))  # 强制白色背景
     offset_x = (grid_size - new_w) // 2
     offset_y = (grid_size - new_h) // 2
     canvas.paste(img_resized, (offset_x, offset_y))
